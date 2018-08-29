@@ -1,8 +1,3 @@
 # pokerplanning
 
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Um projeto de Poker Planning para testar o framework Flutter.io
