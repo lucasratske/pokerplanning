@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
 
-class PontoScreen extends StatefulWidget {
-  //PontoScreen({Key key, this.ponto}) : super(key: key);
-  PontoScreen({Key key}) : super(key: key);
-  
-  //final String ponto;
-
-  @override
-  _PontoScreenState createState() => new _PontoScreenState();
-}
-
-class _PontoScreenState extends State<PontoScreen> {
+class PontoScreen extends StatelessWidget {
+  final String ponto;
+  PontoScreen({Key key, @required this.ponto}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {    
@@ -19,8 +11,7 @@ class _PontoScreenState extends State<PontoScreen> {
         title: new Text("Meu ponto é..."),
       ),
       body: new Center(
-        //child: new Text(widget.ponto),
-        child: new Text("Não foi implementado"),
+        child: new Text(ponto, style: new TextStyle(fontSize: 80.0, color: Colors.indigoAccent),),
       ),
     );
   }

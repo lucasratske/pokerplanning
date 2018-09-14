@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokerplanning/screens/Ponto/index.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
@@ -10,24 +11,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   BuildContext context;
 
-  // void _showDialog(val) {
-  //     showDialog<void>(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return new SimpleDialog(
-  //           contentPadding: EdgeInsets.all(16.0),
-  //           children: <Widget>[
-  //             new Text(
-  //               val,
-  //               textAlign: TextAlign.center,
-  //               style: new TextStyle(fontSize: 50.0, color: Colors.black, decoration: null),
-  //             ),
-  //           ],
-  //         );
-  //       }
-  //     );
-  // }
-
   onPressed(String routeName) {
     Navigator.of(context).pushNamed("/PontoPage");
   }
@@ -37,8 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
       child: new Text(val, style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold)),
       color: Colors.purple,
       textColor: Colors.white,
-      //onPressed: () => _showDialog(val),
-      onPressed: () => onPressed("/PontoPage"),
+      onPressed: () {
+        Navigator.push(context, 
+          MaterialPageRoute(
+            builder: (context) => PontoScreen(ponto: val),
+          ),
+        );
+      },
       padding: EdgeInsets.all(10.0),
     );
   }
